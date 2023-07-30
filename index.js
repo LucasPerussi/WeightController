@@ -10,31 +10,14 @@ const constantes = require('./library/constantes.js');
 // Aplicar o middleware de autenticação em todas as rotas que você deseja proteger
 server.use(validarChave);
 
-server.get("/", (req, res) => {
-  return res.json({ mensagem: "Nossa API está funcionando" });
-});
 
-server.get("/usuarios", (req, res) => {
-  return res.json({
-    usuario: "Lucassss",
-    tamanhoDoPau: 23424,
-    demoraPraGozar: 0,
-  });
-});
+// Import the routes from routes.js
+const routes = require("./routes/routes.js");
 
-server.get("/filmes", (req, res) => {
-//   return res.json(filmes);
-console.log("oier")
-});
 
-server.get("/usuario", (req, res) => {
-  return res.json({
-    usuario: "Lucas Perussiiiiii",
-    tamanhoDoPau: 33333,
-    demoraPraGozar: 0,
-  });
-});
+// Use the routes from routes.js
+server.use("/", routes);
 
 server.listen(3500, () => {
-    console.log('Welcome to Weight Control API by Lucas Perussi' + constantes.BASE_URL);
+  console.log('Welcome to Weight Control API by Lucas Perussi');
 });

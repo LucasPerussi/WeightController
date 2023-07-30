@@ -1,19 +1,18 @@
 // CONSTANTES
 
 
-const BASE_URL = "localhost";
-const BD_NAME = "WC_Dados";
-const BD_USER = "lucas";
-const BD_PASSWORD = "123456";
+const SERVER_NAME = "localhost";
+const BD_NAME = "WeightController-BD";
+const BD_USER = "root";
+const BD_PASSWORD = "";
 
 const TABLE_API_KEYS = "api_keys";
 const TABLE_USERS = "users";
 
 
 
-
 module.exports = {
-    BASE_URL,
+    SERVER_NAME,
     BD_NAME,
     BD_USER,
     BD_PASSWORD,
