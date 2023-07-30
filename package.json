@@ -1,0 +1,16 @@
+{
+  "name": "api-weightcontrol",
+  "version": "1.0.0",
+  "description": "App para estudar APIs em Node e criar uma ferramenta de controle de peso e dieta",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Perussi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.5.2"
+  }
+}
