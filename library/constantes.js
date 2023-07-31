@@ -8,6 +8,7 @@ const BD_PASSWORD = "";
 
 const TABLE_API_KEYS = "api_keys";
 const TABLE_USERS = "users";
+const TABLE_LOGINS = "logins";
 
 
 
@@ -18,4 +19,5 @@ module.exports = {
     BD_PASSWORD,
     TABLE_API_KEYS,
     TABLE_USERS,
+    TABLE_LOGINS,
   };

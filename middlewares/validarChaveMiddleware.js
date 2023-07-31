@@ -1,6 +1,7 @@
 const constantes = require('../library/constantes');
 const consultarChaves = require('../controller/api_keys/keyController');
 
+
 // Função para verificar se a chave fornecida está presente na lista de chaves válidas
 async function validarChave(req, res, next) {
   const chave = req.headers["api_identifier"];

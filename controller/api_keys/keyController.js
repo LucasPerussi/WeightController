@@ -11,38 +11,6 @@ const connectionConfig = {
 };
 
 
-const keyController = {
-  createKey: (req, res) => {
-    const { user } = req.body;
-    // console.log(req)
-
-    const crypto = require('crypto');
-
-    function gerarCodigoAleatorio(tamanho) {
-      return crypto.randomBytes(tamanho).toString('hex');
-    }
-
-    // Gerar código aleatório de 20 caracteres
-    const codigoAleatorio = gerarCodigoAleatorio(20);
-
-    console.log('Código Aleatório:', codigoAleatorio);
-
-    // Aqui você teria a lógica para salvar os dados no banco de dados usando SQL
-    const insertQuery = `INSERT INTO ` + constantes.TABLE_API_KEYS +` (api_user, api_key) VALUES (?, ?, ?)`;
-    const values = [nome, codigoAleatorio];
-    
-    dbConnection.query(insertQuery, values, (err, results) => {
-      if (err) {
-        console.error("Erro ao salvar usuário no banco de dados:", err);
-        return res.status(500).json({ error: "Erro ao salvar usuário no banco de dados", err });
-      }
-
-      const newUserId = results.insertId;
-      return res.json({ id: newUserId, nome, email, idade });
-    });
-  },
-};
-
 async function consultarChaves() {
   try {
     const connection = await mysql.createConnection(connectionConfig);

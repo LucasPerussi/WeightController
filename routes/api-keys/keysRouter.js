@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const keyController = require("../../controller/api_keys/keyController");
+const KeyController = require('../../controller/api_keys/keyCrudController');
 const fetch = require('../../fetch/keys/keys')
 
 
@@ -37,9 +37,9 @@ router.get("/", (req, res) => {
 
 router.post("/new", express.json(), (req, res) => {
   // Lógica para salvar o usuário no banco de dados
-  UserController.createKey(req, res);
+  KeyController.createKey(req, res);
 });
 
-// Resto do código...
+
 
 module.exports = router;

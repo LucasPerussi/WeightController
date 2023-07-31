@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const usersController = require("../../controller/users/userController");
+const UserController = require("../../controller/users/userController");
 const fetch = require('../../fetch/users/users')
 
 
@@ -40,8 +40,13 @@ router.get("/profile", (req, res) => {
 });
 
 router.post("/new", express.json(), (req, res) => {
-  // Lógica para salvar o usuário no banco de dados
   UserController.createUser(req, res);
+});
+
+router.post("/login", express.json(), async (req, res) => {
+  const { email, password } = req.body;
+  const result = await UserController.loginUser(email, password);
+  res.status(result.success ? 200 : 401).json({ message: result.message, session: result.session, user: result.user });
 });
 
 module.exports = router;
