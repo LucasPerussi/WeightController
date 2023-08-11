@@ -13,10 +13,8 @@ server.get("/health", (req, res) => {
   }));
 });
 
-
 server.use(async (req, res, next) => {
   const codigoSessao = req.header('session-key');
-
   if (codigoSessao) {
     req.sessao = await criarOuRecuperarSessao(codigoSessao);
 
