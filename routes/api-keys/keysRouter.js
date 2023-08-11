@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const KeyController = require('../../controller/api_keys/keyCrudController');
-const fetch = require('../../fetch/keys/keys')
+const fetch = require('../../model/keys/keys')
 
 
 // Resto do código...
@@ -19,11 +19,9 @@ router.get("/getById/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const key = await fetch.getKeyById(id);
-
     if (key === null) {
       return res.status(404).json({ mensagem: "API-KEY não encontrado." });
     }
-
     return res.json(key);
   } catch (error) {
     return res.status(500).json({ mensagem: "Erro ao obter API-KEY." });
