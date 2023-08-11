@@ -27,6 +27,24 @@ SET time_zone = "+00:00";
 -- Table structure for table `api_keys`
 --
 
+CREATE TABLE `users` (
+  `usr_id` int(11) NOT NULL,
+  `usr_nome` varchar(255) DEFAULT NULL,
+  `usr_email` varchar(255) DEFAULT NULL,
+  `usr_idade` int(11) DEFAULT NULL,
+  `usr_password` text NOT NULL,
+  `usr_picture` text NOT NULL DEFAULT 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+  `usr_last_name` varchar(255) NOT NULL,
+  `usr_sex` int(11) NOT NULL,
+  `usr_born_date` date NOT NULL,
+  `usr_weight` double DEFAULT NULL,
+  `usr_height` double DEFAULT NULL,
+  `usr_role` int(11) NOT NULL DEFAULT 1,
+  `usr_user` varchar(255) DEFAULT NULL,
+  `usr_changed` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
 CREATE TABLE `logins` (
   `ses_id` INT PRIMARY KEY AUTO_INCREMENT,
   `ses_key` VARCHAR(60) NOT NULL,
@@ -61,23 +79,6 @@ INSERT INTO `api_keys` (`api_id`, `api_key`, `api_user`, `api_created_at`, `api_
 --
 -- Table structure for table `users`
 --
-
-CREATE TABLE `users` (
-  `usr_id` int(11) NOT NULL,
-  `usr_nome` varchar(255) DEFAULT NULL,
-  `usr_email` varchar(255) DEFAULT NULL,
-  `usr_idade` int(11) DEFAULT NULL,
-  `usr_password` text NOT NULL,
-  `usr_picture` text NOT NULL DEFAULT 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
-  `usr_last_name` varchar(255) NOT NULL,
-  `usr_sex` int(11) NOT NULL,
-  `usr_born_date` date NOT NULL,
-  `usr_weight` double DEFAULT NULL,
-  `usr_height` double DEFAULT NULL,
-  `usr_role` int(11) NOT NULL DEFAULT 1,
-  `usr_user` varchar(255) DEFAULT NULL,
-  `usr_changed` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
