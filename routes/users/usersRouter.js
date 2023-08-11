@@ -30,13 +30,12 @@ router.get("/getById/:id", async (req, res) => {
   }
 });
 
-
 router.get("/", (req, res) => {
   return res.json({ mensagem: "Nossa API de usuários está funcionando" });
 });
 
 router.get("/profile", (req, res) => {
-    return res.json({ Nome: "Lucas Perussi" });
+  return res.json({ Nome: "Lucas Perussi" });
 });
 
 router.post("/new", express.json(), (req, res) => {

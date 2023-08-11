@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10; // Número de rounds de salt (recomendado entre 10 e 12)
 const mysql = require('mysql2/promise');
 
-
 // Configuração de conexão com o banco de dados MySQL
 const connection = mysql.createPool({
   host: constantes.SERVER_NAME,
@@ -13,7 +12,6 @@ const connection = mysql.createPool({
   password: constantes.BD_PASSWORD,
   database: constantes.BD_NAME,
 });
-
 
 function criptografarSenha(senha) {
   return bcrypt.hashSync(senha, saltRounds);

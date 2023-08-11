@@ -7,7 +7,7 @@ const validarChave = require('./middlewares/validarChaveMiddleware.js');
 // constantes
 const constantes = require('./library/constantes.js');
 
-// Aplicar o middleware de autenticação em todas as rotas que você deseja proteger
+// Aplicar o middleware de autenticação em todas as rotas 
 server.use(validarChave);
 
 

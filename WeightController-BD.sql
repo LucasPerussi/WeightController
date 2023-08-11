@@ -27,6 +27,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `api_keys`
 --
 
+CREATE TABLE `logins` (
+  `ses_id` INT PRIMARY KEY AUTO_INCREMENT,
+  `ses_key` VARCHAR(60) NOT NULL,
+  `ses_user` INT,
+  `ses_created_at` DATETIME NOT NULL DEFAULT current_timestamp(),
+  FOREIGN KEY (`ses_user`) REFERENCES `users`(`usr_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 CREATE TABLE `api_keys` (
   `api_id` INT PRIMARY KEY AUTO_INCREMENT,
